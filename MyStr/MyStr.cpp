@@ -88,3 +88,27 @@ void MyStr::Cat(MyStr& obj)
 	for (int i = PastLength; i < length; i++)
 		str[i] = obj.str[i - PastLength];
 }
+
+void MyStr::DelChar(char c)
+{
+	int length2 = length;
+	for (int i = 0; i < length; i++)
+		if (str[i] == c)
+			--length2;
+	char* tempstr = new char[length2];
+	int a = 0;
+	for (int i = 0; i < length; i++) {
+		if (str[i] == c) {
+			++a;
+			continue;
+		}
+		tempstr[i - a] = str[i];
+	}
+	length = length2;
+	delete[] str;
+	str = new char[length];
+	for (int i = 0; i < length; i++) {
+		str[i] = tempstr[i];
+	}
+	delete[] tempstr;
+}

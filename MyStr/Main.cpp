@@ -4,9 +4,8 @@
 using namespace std;
 
 int main() {
-	MyStr A("Hello ");
-	MyStr B("WORLD");
-	A.Cat(B);
+	MyStr A("Hello World");
+	A.DelChar('l');
 	A.Print();
 
 	return 0;

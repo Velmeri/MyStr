@@ -23,4 +23,5 @@ public:
 	bool Str(const char* str);
 	int Chr(char c);
 	void Cat(MyStr& obj);
+	void DelChar(char c);
 };
