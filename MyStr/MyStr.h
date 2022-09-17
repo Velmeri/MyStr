@@ -24,4 +24,5 @@ public:
 	int Chr(char c);
 	void Cat(MyStr& obj);
 	void DelChar(char c);
+	int StrCmp(MyStr& obj);
 };

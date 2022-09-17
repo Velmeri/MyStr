@@ -112,3 +112,12 @@ void MyStr::DelChar(char c)
 	}
 	delete[] tempstr;
 }
+
+int MyStr::StrCmp(MyStr& obj)
+{
+	if (length < obj.length)
+		return -1;
+	if (length > obj.length)
+		return 1;
+	return 0;
+}
