@@ -8,9 +8,19 @@ class MyStr
 	char* str;
 	int length;
 public:
+	//constructors and destructors
 	MyStr();
 	MyStr(int length);
 	MyStr(const char* str);
 	~MyStr();
-};
 
+	//output
+	int Size() const;
+	void Print() const;
+
+	//other
+	void Cpy(MyStr& obj);
+	bool Str(const char* str);
+	int Chr(char c);
+	void Cat(MyStr& obj);
+};
