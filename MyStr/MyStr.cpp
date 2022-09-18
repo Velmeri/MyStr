@@ -64,6 +64,14 @@ char MyStr::operator[](int index)
 	return str[index];
 }
 
+MyStr::operator int() const
+{
+	int sum = 0;
+	for (int i = 0; i < length; i++)
+		sum += str[i];
+	return sum;
+}
+
 void MyStr::Cpy(MyStr& obj)
 {
 	length = obj.length;
