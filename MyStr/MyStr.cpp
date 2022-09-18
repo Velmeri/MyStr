@@ -55,6 +55,15 @@ void MyStr::operator()() const
 		cout << str[i];
 }
 
+char MyStr::operator[](int index)
+{	
+	if (index < 0 || index >= length) {
+		cout << "ERROR";
+		return -1;
+	}
+	return str[index];
+}
+
 void MyStr::Cpy(MyStr& obj)
 {
 	length = obj.length;

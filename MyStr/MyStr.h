@@ -21,6 +21,7 @@ public:
 	//operators
 	void operator= (const MyStr& obj);
 	void operator() () const;
+	char operator[] (int index);
 
 	//other
 	void Cpy(MyStr& obj);
