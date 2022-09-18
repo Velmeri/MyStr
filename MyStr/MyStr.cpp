@@ -36,6 +36,19 @@ void MyStr::Print() const
 		cout << str[i];
 }
 
+void MyStr::operator=(const MyStr& obj)
+{
+	if (this == &obj)
+		//return *this;
+	if (str != nullptr)
+		delete[] str;
+	length = obj.length;
+	str = new char[length];
+	for (int i = 0; i < length; i++)
+		str[i] = obj.str[i];
+	//return *this;
+}
+
 void MyStr::Cpy(MyStr& obj)
 {
 	length = obj.length;

@@ -4,8 +4,10 @@
 using namespace std;
 
 int main() {
-	MyStr A("Hello World");
-	A.DelChar('l');
+	MyStr A("123");
+	MyStr B("Hello WORLD");
+	A = B;
+
 	A.Print();
 
 	return 0;

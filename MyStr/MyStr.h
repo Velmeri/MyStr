@@ -18,6 +18,9 @@ public:
 	int Size() const;
 	void Print() const;
 
+	//operators
+	void operator= (const MyStr& obj);
+
 	//other
 	void Cpy(MyStr& obj);
 	bool Str(const char* str);
