@@ -49,6 +49,12 @@ void MyStr::operator=(const MyStr& obj)
 	//return *this;
 }
 
+void MyStr::operator()() const
+{
+	for (int i = 0; i < length; i++)
+		cout << str[i];
+}
+
 void MyStr::Cpy(MyStr& obj)
 {
 	length = obj.length;

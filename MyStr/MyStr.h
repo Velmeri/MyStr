@@ -20,6 +20,7 @@ public:
 
 	//operators
 	void operator= (const MyStr& obj);
+	void operator() () const;
 
 	//other
 	void Cpy(MyStr& obj);
