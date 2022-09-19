@@ -15,9 +15,10 @@ MyStr::MyStr(int length)
 MyStr::MyStr(const char* str)
 {
 	length = strlen(str);
-	this->str = new char[length];
+	this->str = new char[length+1];
 	for (int i = 0; i < length; i++)
 		this->str[i] = str[i];
+	this->str[length] = '\0';
 }
 
 MyStr::~MyStr()
@@ -32,8 +33,7 @@ int MyStr::Size() const
 
 void MyStr::Print() const
 {
-	for (int i = 0; i < length; i++)
-		cout << str[i];
+	cout << str;
 }
 
 void MyStr::operator=(const MyStr& obj)
@@ -77,9 +77,10 @@ void MyStr::Cpy(MyStr& obj)
 	length = obj.length;
 	if (str != nullptr)
 		delete[] str;
-	str = new char[length];
+	str = new char[length+1];
 	for (int i = 0; i < length; i++)
 		str[i] = obj.str[i];
+	this->str[length] = '\0';
 }
 
 bool MyStr::Str(const char* str)
@@ -118,11 +119,12 @@ void MyStr::Cat(MyStr& obj)
 		delete[] str;
 	int PastLength = length;
 	length += obj.length;
-	str = new char[length];
+	str = new char[length+1];
 	for (int i = 0; i < PastLength; i++)
 		str[i] = PastStr[i];
 	for (int i = PastLength; i < length; i++)
 		str[i] = obj.str[i - PastLength];
+	this->str[length] = '\0';
 }
 
 void MyStr::DelChar(char c)
