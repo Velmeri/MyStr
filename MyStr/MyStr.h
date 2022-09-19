@@ -7,6 +7,7 @@ class MyStr
 {
 	char* str;
 	int length;
+	int static count;
 public:
 	//constructors and destructors
 	MyStr();
@@ -14,9 +15,13 @@ public:
 	MyStr(const char* str);
 	~MyStr();
 
+	//inpute
+	void Inpute();
+
 	//output
 	int Size() const;
 	void Print() const;
+	int Count();
 
 	//operators
 	void operator= (const MyStr& obj);

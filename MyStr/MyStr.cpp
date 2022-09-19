@@ -1,15 +1,18 @@
 #include "MyStr.h"
+int MyStr::count = 0;
 
 MyStr::MyStr()
 {
 	length = 80;
 	str = new char[length];
+	++count;
 }
 
 MyStr::MyStr(int length)
 {
 	this->length = length;
 	str = new char[length];
+	++count;
 }
 
 MyStr::MyStr(const char* str)
@@ -19,11 +22,24 @@ MyStr::MyStr(const char* str)
 	for (int i = 0; i < length; i++)
 		this->str[i] = str[i];
 	this->str[length] = '\0';
+	++count;
 }
 
 MyStr::~MyStr()
 {
 	delete[] str;
+	--count;
+}
+
+void MyStr::Inpute()
+{
+	int const size = 20;
+	char buf[20];
+	cin.getline(buf, size);
+	if (str != nullptr)
+		delete[] str;
+	str = new char[strlen(buf) + 1];
+	strcpy_s(str, strlen(buf) + 1, buf);
 }
 
 int MyStr::Size() const
@@ -34,6 +50,11 @@ int MyStr::Size() const
 void MyStr::Print() const
 {
 	cout << str;
+}
+
+int MyStr::Count()
+{
+	return count;
 }
 
 void MyStr::operator=(const MyStr& obj)
