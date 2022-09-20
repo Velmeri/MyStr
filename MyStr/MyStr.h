@@ -21,7 +21,7 @@ public:
 	//output
 	int Size() const;
 	void Print() const;
-	int Count();
+	int Count() const;
 
 	//operators
 	void operator= (const MyStr& obj);
@@ -31,9 +31,9 @@ public:
 
 	//other
 	void Cpy(MyStr& obj);
-	bool Str(const char* str);
-	int Chr(char c);
+	bool Str(const char* str) const;
+	int Chr(char c) const;
 	void Cat(MyStr& obj);
 	void DelChar(char c);
-	int StrCmp(MyStr& obj);
+	int StrCmp(MyStr& obj) const;
 };

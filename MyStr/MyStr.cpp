@@ -52,7 +52,7 @@ void MyStr::Print() const
 	cout << str;
 }
 
-int MyStr::Count()
+int MyStr::Count() const
 {
 	return count;
 }
@@ -104,7 +104,7 @@ void MyStr::Cpy(MyStr& obj)
 	this->str[length] = '\0';
 }
 
-bool MyStr::Str(const char* str)
+bool MyStr::Str(const char* str) const
 {
 	int length2 = strlen(str);
 	for (int i = 0; i < length; i++)
@@ -123,7 +123,7 @@ bool MyStr::Str(const char* str)
 	return 0;
 }
 
-int MyStr::Chr(char c)
+int MyStr::Chr(char c) const
 {
 	for (int i = 0; i < length; i++)
 		if (str[i] == c)
@@ -172,7 +172,7 @@ void MyStr::DelChar(char c)
 	delete[] tempstr;
 }
 
-int MyStr::StrCmp(MyStr& obj)
+int MyStr::StrCmp(MyStr& obj) const
 {
 	if (length < obj.length)
 		return -1;
