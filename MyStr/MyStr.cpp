@@ -25,6 +25,15 @@ MyStr::MyStr(const char* str)
 	++count;
 }
 
+MyStr::MyStr(MyStr&& obj)
+{
+	str = new char[obj.length + 1];
+	length = obj.length;
+	for (int i = 0; i < length; i++)
+		str[i] = obj.str[i];
+	str[length] = '\0';
+}
+
 MyStr::~MyStr()
 {
 	delete[] str;
@@ -68,6 +77,18 @@ void MyStr::operator=(const MyStr& obj)
 	for (int i = 0; i < length; i++)
 		str[i] = obj.str[i];
 	//return *this;
+}
+
+MyStr& MyStr::operator=(MyStr&& obj)
+{
+	if (str != nullptr)
+		delete[] str;
+	str = new char[obj.length + 1];
+	length = obj.length;
+	for (int i = 0; i < length; i++)
+		str[i] = obj.str[i];
+	str[length] = '\0';
+	return *this;
 }
 
 void MyStr::operator()() const

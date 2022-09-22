@@ -13,6 +13,7 @@ public:
 	MyStr();
 	MyStr(int length);
 	MyStr(const char* str);
+	MyStr(MyStr&& obj);
 	~MyStr();
 
 	//inpute
@@ -25,6 +26,7 @@ public:
 
 	//operators
 	void operator= (const MyStr& obj);
+	MyStr& operator =(MyStr&& obj);
 	void operator() () const;
 	char operator[] (int index);
 	operator int() const;
