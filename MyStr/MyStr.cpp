@@ -34,6 +34,18 @@ MyStr::MyStr(MyStr&& obj)
 	str[length] = '\0';
 }
 
+MyStr::MyStr(initializer_list<char> arr)
+{
+	if (str != nullptr)
+		delete[] str;
+	str = new char[arr.size() + 1];
+	length = arr.size();
+	int i = 0;
+	for (auto x = arr.begin(); x != arr.end(); x++)
+		*(str + i++) = *x;
+	str[length] = '\0';
+}
+
 MyStr::~MyStr()
 {
 	delete[] str;

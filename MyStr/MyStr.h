@@ -14,6 +14,7 @@ public:
 	MyStr(int length);
 	MyStr(const char* str);
 	MyStr(MyStr&& obj);
+	MyStr(initializer_list<char> arr);
 	~MyStr();
 
 	//inpute
