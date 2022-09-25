@@ -31,6 +31,8 @@ public:
 	void operator() () const;
 	char operator[] (int index);
 	operator int() const;
+	friend ostream& operator<< (ostream& out, const MyStr& obj);
+	friend istream& operator>> (istream & in, MyStr & obj);
 
 	//other
 	void Cpy(MyStr& obj);

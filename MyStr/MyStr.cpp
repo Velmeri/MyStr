@@ -213,3 +213,21 @@ int MyStr::StrCmp(MyStr& obj) const
 		return 1;
 	return 0;
 }
+
+ostream& operator<<(ostream& out, const MyStr& obj)
+{
+	out << obj.str;
+	return out;
+}
+
+istream& operator>>(istream& in, MyStr& obj)
+{
+	int const size = 20;
+	char buf[20];
+	if (obj.str != nullptr)
+		delete[] obj.str;
+	in >> buf;
+	obj.str = new char[strlen(buf) + 1];
+	strcpy_s(obj.str, strlen(buf) + 1, buf);
+	return in;
+}

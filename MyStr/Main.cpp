@@ -8,5 +8,8 @@ int main() {
 
 	A.Print();
 
+	cin >> A;
+	cout << A;
+
 	return 0;
 }
